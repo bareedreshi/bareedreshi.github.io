@@ -205,6 +205,21 @@ footer{padding:44px 0 66px;font-family:"IBM Plex Mono",monospace;font-size:13px;
   </div>
 
   <div class="case">
+    <h3>Agency contract review and renegotiation</h3>
+    <div class="row"><span class="lab">Situation</span><p>An SEO agency engagement arrived already in motion: a large one-time "local presence rollout" plus a monthly hours block, with access granted and an invoice issued.</p></div>
+    <div class="row"><span class="lab">Found</span><p>The rollout was a citation build priced several times above what the standard tooling costs for the same output. The monthly block was sold as capacity rather than deliverables, with contract language stating outright that no requested item was guaranteed. Scope overlapped the paid media accounts I had just rebuilt in house. Terms ran one direction: full payment upfront and non-refundable, low liability caps, out-of-state venue, unilateral rate increases.</p></div>
+    <div class="row"><span class="lab">Action</span><p>Recommended killing the rollout, carving paid media out of scope entirely, restructuring the monthly block around defined deliverables, and fixing the legal terms before any renewal. Framed upward as financial stewardship rather than territorial defence.</p></div>
+    <div class="row"><span class="lab">The tell</span><p>Their flagship deliverable targeted directory listings. Our actual problem was Google Business Profile completeness. Right invoice, wrong lever &mdash; which is the thing you only catch if you already know where the visibility is leaking.</p></div>
+  </div>
+
+  <div class="case">
+    <h3>Vendor access governance</h3>
+    <div class="row"><span class="lab">Situation</span><p>Two vendors working the same domain at the same time: an SEO agency running off-site local work, and a development partner mid-build on a platform migration.</p></div>
+    <div class="row"><span class="lab">Practice</span><p>Least privilege by default. Analytics, Search Console, Ads, Meta, TikTok and Shopify granted at editor rather than admin, with admin downgraded once onboarding was done. Merchant Center and developer seats held back until scope was settled. Registrar and DNS control never handed over &mdash; when bot mitigation was needed, the answer was a scoped CDN member seat or an in-house implementation, not the keys to the domain.</p></div>
+    <div class="row"><span class="lab">Why</span><p>A vendor holding DNS during an active migration is a single point of failure for the whole business. Coordination costs a few emails. A rollback costs the quarter.</p></div>
+  </div>
+
+  <div class="case">
     <h3>Multi-brand schema and entity program</h3>
     <div class="row"><span class="lab">Problem</span><p>Three brands with different entity types under one ownership group: retail locations, family entertainment venues, and a nonprofit education organization. Different schema requirements, different local footprints, one marketing function.</p></div>
     <div class="row"><span class="lab">Action</span><p>Deployed Organization, LocalBusiness, FAQ, and Course markup across all three, holding entity consistency across Google Business Profile, on-site markup, and content.</p></div>
@@ -220,7 +235,9 @@ footer{padding:44px 0 66px;font-family:"IBM Plex Mono",monospace;font-size:13px;
 
   <div class="case">
     <h3>AI-augmented marketing operations</h3>
-    <div class="row"><span class="lab">Built</span><p>Roughly ten automated workflows on the Claude API and n8n covering recurring performance reporting, data aggregation, and campaign QA across the portfolio.</p></div>
+    <div class="row"><span class="lab">Built</span><p>A named agent system rather than a pile of scripts: spend-anomaly detection, review management across the location footprint, recurring reporting, and storefront and site health monitoring &mdash; roughly ten workflows on n8n and the Claude API, with model routing by task and approval gates on anything that touches spend.</p></div>
+    <div class="row"><span class="lab">Design call</span><p>Built the revenue side webhook-driven off commerce events rather than polling the ads API for conversions. Conversion reporting carries hours of processing latency, so polling it produces alerts on data that has not settled. Platform-reported metrics stay separated from commerce-actual revenue in every output, and Performance Max asset-group data is treated as modeled &mdash; useful for creative direction, never for unit economics.</p></div>
+    <div class="row"><span class="lab">Validation</span><p>Cross-model review, where a second model critiques the first's output before anything ships. Adversarial QA beats a single model agreeing with itself.</p></div>
     <div class="row"><span class="lab">Result</span><p>Replaced a full day of manual weekly reporting and redirected that capacity into strategy and testing.</p></div>
     <div class="row"><span class="lab">Note</span><p>Built without engineering support. The Computer Science background is what makes that possible — I ship the system rather than write a requirements doc and wait for someone else to.</p></div>
   </div>
@@ -264,6 +281,8 @@ footer{padding:44px 0 66px;font-family:"IBM Plex Mono",monospace;font-size:13px;
     <dd>GA4, Google Tag Manager, conversion tracking architecture, offline and store-visit conversion values, attribution, Looker Studio, tracking audits and data QA.</dd>
     <dt>Paid and creative</dt>
     <dd>Google Ads across Search, Performance Max, Display and YouTube; Meta; TikTok; streaming; print and out-of-home. Video commercial production from concept and script through campaign build. Landing page A/B testing.</dd>
+    <dt>Vendor and agency governance</dt>
+    <dd>Contract and pricing review against market rates, scope definition and carve-outs, restructuring hours-based agreements around defined deliverables, least-privilege access administration across analytics, ads and commerce platforms, and multi-vendor coordination on a shared domain.</dd>
     <dt>Automation</dt>
     <dd>n8n, Zapier, Claude API, Google Ads API, automated reporting and campaign QA pipelines.</dd>
     <dt>Platforms</dt>
